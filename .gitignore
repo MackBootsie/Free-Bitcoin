@@ -1,0 +1,7 @@
+project.xcworkspace/
+build/
+xcuserdata/
+Other Resources/
+.idea/
+resources/
+platforms/ios/www/

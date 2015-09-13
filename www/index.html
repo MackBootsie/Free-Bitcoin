@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Free Bitcoin</title>
+	<link rel="stylesheet" href="css/framework7.min.css">
+	<link rel="stylesheet" href="css/my-app.css">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="cordova.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</head>
+<body>
+
+<div class="views">
+	<div class="view view-main">
+		<div class="navbar">
+			<div class="navbar-inner" data-page="index">
+				<div class="left"><a href="#info">Info</a></div>
+				<div class="center sliding">Free Bitcoin</div><!--<span class="preloader" style="width: 20px; height: 20px;"></span>-->
+				<div class="right">฿<span id="topbalance" class="odometer">0.00000000</span></div>
+			</div>
+			<div class="navbar-inner cached" data-page="info">
+				<div class="left sliding"><a href="#index" class="back link"><i class="icon icon-back"></i><span>Free Bitcoin</span></a></div>
+				<div class="center sliding">Info</div>
+			</div>
+		</div>
+		<div class="pages navbar-through">
+			<div class="page" data-page="index">
+				<div class="page-content">
+					<div class="content-block" id="loading-block">
+						<div class="content-block-inner" id="loading-block-inner">
+							<p align="center"><span class="preloader"></span><br>Loading</p>
+						</div>
+					</div>
+					<iframe id="mainiframe" class="mainiframe" style="display: none;" src="http://freebitco.in/?r=415679" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+					<div class="content-block myloginprompt">
+						<!--<p align="center">Log in to <b>freebitco.in</b> on your computer!</p>-->
+					</div>
+				</div>
+			</div>
+			<div class="page cached" data-page="info">
+				<div class="page-content">
+					<div class="content-block-title">About this app</div>
+					<div class="content-block">
+						<div class="content-block-inner">
+							<p>This is a free Bitcoin faucet app for the Bitcoin faucet freebitco.in!</p>
+						</div>
+					</div>
+					<div class="content-block-title">Withdrawls</div>
+					<div class="content-block">
+						<div class="content-block-inner">
+							<p>Bitcoins are paid to your account once a week, if you have Auto Withdrawls enabled and have more than 0.00005460 BTC. You can check the status of Auto Withdrawls by tapping below:</p>
+							<p><a id="checkAutoWithdrawStatus" class="button button-fill">Check Status</a></p>
+							<p id="outputAutoWithdrawStatus" style="display: none;"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KC6RKL"
+									height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KC6RKL');</script>
+<!-- End Google Tag Manager -->
+
+</body>
+</html>
