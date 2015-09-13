@@ -19,10 +19,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"iAd\"><param name=\"ios-package\" value=\"iAdPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         },
@@ -37,6 +33,10 @@
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"iAd\"><param name=\"ios-package\" value=\"iAdPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -44,17 +44,17 @@
         }
     },
     "installed_plugins": {
-        "com.rjfun.cordova.extension": {
-            "PACKAGE_NAME": "com.georgegarside.freebitcoin"
-        },
-        "com.rjfun.cordova.iad": {
-            "PACKAGE_NAME": "com.georgegarside.freebitcoin"
-        },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.georgegarside.freebitcoin"
         },
         "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "com.georgegarside.freebitcoin"
+        },
+        "cordova-plugin-iad": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
         }
     },
     "dependent_plugins": {}

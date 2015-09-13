@@ -10,18 +10,18 @@
 		1771236D1B370DF100A5FAEE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1771236C1B370DF100A5FAEE /* Media.xcassets */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1DEBB9F5882847CC8FD10200 /* libCordovaGenericAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB4E5D81FB24D35819E4B0D /* libCordovaGenericAd.a */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		2D9A88D3EBB04A0AA3886B6B /* iAdPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F59688C346494191BDED17 /* iAdPlugin.m */; };
+		2ABD6894E77C43C0B9B51501 /* libCordovaGenericAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2448788D56614C13AFB9BC81 /* libCordovaGenericAd.a */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */; };
+		4B585022C4144DF193B4159E /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFC630E587D45DBAB7CDA7B /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
+		736BA89544E34721A17FE7EB /* CDVPluginExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D23D5BA6B2846ADB7BC3751 /* CDVPluginExt.m */; };
 		7528324714ED4A3FA2EBB591 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = B4806CFEE801419AA4ED0B20 /* CDVDevice.m */; };
-		BF4358BDAF8F4BA29EB03CE4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077982C3661445F3B41CD81F /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E7D9F5C9FF98480D8EB3D9E6 /* CDVPluginExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC72BF86CBF4E9E8D8824CC /* CDVPluginExt.m */; };
 		FBD66A6F5EDE4B9B81594F09 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18877DA082E04991AAE3D641 /* CDVStatusBar.m */; };
+		FD9BCD743931410C924B1B72 /* iAdPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3FA9389F9480BAF6F929C /* iAdPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,14 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		077982C3661445F3B41CD81F /* iAd.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1771236C1B370DF100A5FAEE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		18877DA082E04991AAE3D641 /* CDVStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = org.apache.cordova.statusbar/CDVStatusBar.m; sourceTree = "<group>"; };
-		1CC72BF86CBF4E9E8D8824CC /* CDVPluginExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVPluginExt.m; path = com.rjfun.cordova.extension/CDVPluginExt.m; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Free Bitcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bitcoin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2387F27DC21A4987B1AD7222 /* iAdPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iAdPlugin.h; path = com.rjfun.cordova.iad/iAdPlugin.h; sourceTree = "<group>"; };
+		1E79AA88C5834C19A6BBE690 /* iAdPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iAdPlugin.h; path = "cordova-plugin-iad/iAdPlugin.h"; sourceTree = "<group>"; };
+		2448788D56614C13AFB9BC81 /* libCordovaGenericAd.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libCordovaGenericAd.a; path = "Free-Bitcoin/Plugins/cordova-plugin-extension/libCordovaGenericAd.a"; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
@@ -59,18 +58,19 @@
 		302D95F014D2391D003F00A1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Free-Bitcoin-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Free-Bitcoin-Prefix.pch"; sourceTree = "<group>"; };
-		5AB4E5D81FB24D35819E4B0D /* libCordovaGenericAd.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libCordovaGenericAd.a; path = "Free-Bitcoin/Plugins/com.rjfun.cordova.extension/libCordovaGenericAd.a"; sourceTree = "<group>"; };
+		52FB31C0828441F2996A7ABB /* PluginAdapterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginAdapterDelegate.h; path = "cordova-plugin-extension/PluginAdapterDelegate.h"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		6E632860C8E7402383E610C5 /* CDVPluginExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVPluginExt.h; path = com.rjfun.cordova.extension/CDVPluginExt.h; sourceTree = "<group>"; };
-		870F209BA91345B4929F79C0 /* PluginAdapterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginAdapterDelegate.h; path = com.rjfun.cordova.extension/PluginAdapterDelegate.h; sourceTree = "<group>"; };
+		684ABDCBFDFB4667A4EF8616 /* GenericAdPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericAdPlugin.h; path = "cordova-plugin-extension/GenericAdPlugin.h"; sourceTree = "<group>"; };
+		6BFC630E587D45DBAB7CDA7B /* iAd.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		6D23D5BA6B2846ADB7BC3751 /* CDVPluginExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVPluginExt.m; path = "cordova-plugin-extension/CDVPluginExt.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Free-Bitcoin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Free-Bitcoin-Info.plist"; path = "../Free-Bitcoin-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		A0280AA980384438B5A77567 /* GenericAdPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericAdPlugin.h; path = com.rjfun.cordova.extension/GenericAdPlugin.h; sourceTree = "<group>"; };
-		B3F59688C346494191BDED17 /* iAdPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iAdPlugin.m; path = com.rjfun.cordova.iad/iAdPlugin.m; sourceTree = "<group>"; };
+		B039EDF7C88D4CF5B25411B7 /* CDVPluginExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVPluginExt.h; path = "cordova-plugin-extension/CDVPluginExt.h"; sourceTree = "<group>"; };
 		B4806CFEE801419AA4ED0B20 /* CDVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = org.apache.cordova.device/CDVDevice.m; sourceTree = "<group>"; };
 		B630467E9FC14801BDDB129F /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
 		E78E0D92050D4E7294998240 /* CDVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = org.apache.cordova.device/CDVDevice.h; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Free-Bitcoin/config.xml"; sourceTree = "<group>"; };
+		FEF3FA9389F9480BAF6F929C /* iAdPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iAdPlugin.m; path = "cordova-plugin-iad/iAdPlugin.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
-				1DEBB9F5882847CC8FD10200 /* libCordovaGenericAd.a in Frameworks */,
-				BF4358BDAF8F4BA29EB03CE4 /* iAd.framework in Frameworks */,
+				4B585022C4144DF193B4159E /* iAd.framework in Frameworks */,
+				2ABD6894E77C43C0B9B51501 /* libCordovaGenericAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +153,8 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
-				5AB4E5D81FB24D35819E4B0D /* libCordovaGenericAd.a */,
-				077982C3661445F3B41CD81F /* iAd.framework */,
+				6BFC630E587D45DBAB7CDA7B /* iAd.framework */,
+				2448788D56614C13AFB9BC81 /* libCordovaGenericAd.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,16 +170,16 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				1CC72BF86CBF4E9E8D8824CC /* CDVPluginExt.m */,
-				870F209BA91345B4929F79C0 /* PluginAdapterDelegate.h */,
-				6E632860C8E7402383E610C5 /* CDVPluginExt.h */,
-				A0280AA980384438B5A77567 /* GenericAdPlugin.h */,
-				B3F59688C346494191BDED17 /* iAdPlugin.m */,
-				2387F27DC21A4987B1AD7222 /* iAdPlugin.h */,
 				B4806CFEE801419AA4ED0B20 /* CDVDevice.m */,
 				E78E0D92050D4E7294998240 /* CDVDevice.h */,
 				18877DA082E04991AAE3D641 /* CDVStatusBar.m */,
 				B630467E9FC14801BDDB129F /* CDVStatusBar.h */,
+				FEF3FA9389F9480BAF6F929C /* iAdPlugin.m */,
+				1E79AA88C5834C19A6BBE690 /* iAdPlugin.h */,
+				6D23D5BA6B2846ADB7BC3751 /* CDVPluginExt.m */,
+				52FB31C0828441F2996A7ABB /* PluginAdapterDelegate.h */,
+				B039EDF7C88D4CF5B25411B7 /* CDVPluginExt.h */,
+				684ABDCBFDFB4667A4EF8616 /* GenericAdPlugin.h */,
 			);
 			name = Plugins;
 			path = "Free-Bitcoin/Plugins";
@@ -222,7 +222,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 700;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 5TFUK958NL;
@@ -306,10 +306,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				E7D9F5C9FF98480D8EB3D9E6 /* CDVPluginExt.m in Sources */,
-				2D9A88D3EBB04A0AA3886B6B /* iAdPlugin.m in Sources */,
 				7528324714ED4A3FA2EBB591 /* CDVDevice.m in Sources */,
 				FBD66A6F5EDE4B9B81594F09 /* CDVStatusBar.m in Sources */,
+				FD9BCD743931410C924B1B72 /* iAdPlugin.m in Sources */,
+				736BA89544E34721A17FE7EB /* CDVPluginExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +343,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Free-Bitcoin/Plugins/com.rjfun.cordova.extension\"",
+					"\"$(SRCROOT)/Free-Bitcoin/Plugins/cordova-plugin-extension\"",
 				);
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -381,7 +381,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Free-Bitcoin/Plugins/com.rjfun.cordova.extension\"",
+					"\"$(SRCROOT)/Free-Bitcoin/Plugins/cordova-plugin-extension\"",
 				);
 				OTHER_LDFLAGS = (
 					"-weak_framework",
