@@ -20,7 +20,7 @@
 		<div class="navbar">
 			<div class="navbar-inner" data-page="index">
 				<div class="left"><a href="#info">Info</a></div>
-				<div class="center sliding">Free Bitcoin</div><!--<span class="preloader" style="width: 20px; height: 20px;"></span>-->
+				<div class="center sliding">Free Bitcoin</div>
 				<div class="right">฿<span id="topbalance" class="odometer">0.00000000</span></div>
 			</div>
 			<div class="navbar-inner cached" data-page="info">
@@ -40,6 +40,30 @@
 					<div class="content-block myloginprompt">
 						<!--<p align="center">Log in to <b>freebitco.in</b> on your computer!</p>-->
 					</div>
+					<div id="openfaucet" style="display: none;">
+						<div class="list-block">
+							<ul>
+								<li>
+									<a href="javascript:void(0)" class="item-link item-content" id="openfaucet-button">
+										<div class="item-inner">
+											<div class="item-title">Open Faucet</div>
+											<div class="item-after">
+												<span id="openfaucet-preloader" class="preloader" style="width: 20px; height: 20px; display: none;"></span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="content-block-title">Withdrawls</div>
+						<div class="content-block">
+							<div class="content-block-inner">
+								<p>Bitcoins are paid to your account once a week, if you have Auto Withdrawls enabled and have more than 0.00005460 BTC. You can check the status of Auto Withdrawls by tapping below:</p>
+								<p><a id="checkAutoWithdrawStatus" class="button button-fill">Check Status</a></p>
+								<p id="outputAutoWithdrawStatus" style="display: none;"></p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="page cached" data-page="info">
@@ -48,14 +72,6 @@
 					<div class="content-block">
 						<div class="content-block-inner">
 							<p>This is a free Bitcoin faucet app for the Bitcoin faucet freebitco.in!</p>
-						</div>
-					</div>
-					<div class="content-block-title">Withdrawls</div>
-					<div class="content-block">
-						<div class="content-block-inner">
-							<p>Bitcoins are paid to your account once a week, if you have Auto Withdrawls enabled and have more than 0.00005460 BTC. You can check the status of Auto Withdrawls by tapping below:</p>
-							<p><a id="checkAutoWithdrawStatus" class="button button-fill">Check Status</a></p>
-							<p id="outputAutoWithdrawStatus" style="display: none;"></p>
 						</div>
 					</div>
 				</div>

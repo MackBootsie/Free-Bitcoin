@@ -26,10 +26,6 @@ var Bitcoin = {
 					})
 				},1500)}
 			);
-			Bitcoin.frame.find('p#free_play_claim_button button, a.button.medium.success').click(function(){
-				$('#mainiframe').css('opacity', '0');
-				$('#loading-block, .myloginprompt').show();
-			});
 		}
 	},
 	info: {
@@ -53,10 +49,32 @@ $(document).ready(function() {
 	$('#mainiframe').load(function() {
 		Bitcoin.setup.setFrame();
 		window.setTimeout(function () {
-			// Remove loading div from splash page and show iframe
-			$('#loading-block, .myloginprompt').hide();
-			$('#mainiframe').removeAttr('style');
-		}, 3000);
+
+			if (Bitcoin.frame.find('.free_play_claim_button').is(':visible') == true) {
+
+				// Make sure preloader is not being shown
+				$('#openfaucet-preloader').hide();
+
+				// Faucet not opened, iframe is only showing Open Faucet button right now
+				$('#openfaucet').show();
+				$('#loading-block, .myloginprompt').hide();
+
+				// Open Faucet list item link
+				$('#openfaucet-button').on('click', function() {
+					$('#openfaucet-button').off('click'); // disables subsequent clicks
+					$('#openfaucet-preloader').show(); // show preloader
+					Bitcoin.frame.find('.free_play_claim_button').click(); // click on the button in the iframe
+				});
+
+			} else {
+
+				// Faucet opened, remove loading div from splash page and show iframe
+				$('#loading-block, .myloginprompt').hide();
+				$('#mainiframe').show();
+
+			}
+
+		}, 1000);
 	});
 
 	// Button in info page used to check auto withdraw
