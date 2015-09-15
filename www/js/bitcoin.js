@@ -63,7 +63,7 @@ $(document).ready(function() {
 				$('#openfaucet-button').on('click', function() {
 					$('#openfaucet-button').off('click'); // disables subsequent clicks
 					$('#openfaucet-preloader').show(); // show preloader
-					Bitcoin.frame.find('.free_play_claim_button').click(); // click on the button in the iframe
+					Bitcoin.frame.find('.free_play_claim_button')[0].click(); // click on the button in the iframe
 				});
 
 				$('#text-maxwinnings').text(Bitcoin.frame.find('#free_play_payout_table > table tbody tr:last td:last').text().replace(' BTC',''));
