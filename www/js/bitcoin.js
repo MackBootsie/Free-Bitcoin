@@ -66,6 +66,8 @@ $(document).ready(function() {
 					Bitcoin.frame.find('.free_play_claim_button').click(); // click on the button in the iframe
 				});
 
+				$('#text-maxwinnings').text(Bitcoin.frame.find('#free_play_payout_table > table tbody tr:last td:last').text().replace(' BTC',''));
+
 			} else {
 
 				// Faucet opened, remove loading div from splash page and show iframe
