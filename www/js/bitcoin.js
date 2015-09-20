@@ -18,8 +18,11 @@ var Bitcoin = {
 			Bitcoin.frame = $(frame);
 		},
 		setFrame: function() {
+			setLoginStatus('Connecting…');
 			Bitcoin.setup.getFrame();
+			setLoginStatus('Checking balance…');
 			Bitcoin.info.balance();
+			setLoginStatus('Consociating…');
 			Bitcoin.setup.framed();
 			Bitcoin.frame.find('#free_play_form_button').click(function(){
 				setTimeout(function(){
@@ -37,6 +40,10 @@ var Bitcoin = {
 	}
 };
 
+function setLoginStatus (status) {
+	$('#loginstatus').text(status);
+}
+
 // Go
 $(document).ready(function() {
 
@@ -51,12 +58,15 @@ $(document).ready(function() {
 	// When iframe changes location, iframe init needs to take place again
 	$('#mainiframe').load(function() {
 		Bitcoin.setup.setFrame();
+		setLoginStatus('Almost there…');
 		window.setTimeout(function () {
+
+			setLoginStatus('');
 
 			if (Bitcoin.frame.find('.free_play_claim_button').is(':visible')) {
 
 				// Faucet not opened, iframe is only showing Open Faucet button right now
-				$('#loading-block, .myloginprompt, #mainiframe, #openfaucet-preloader').hide();
+				$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
 				$('#openfaucet').show();
 
 				// Open Faucet list item link
@@ -70,8 +80,8 @@ $(document).ready(function() {
 
 			} else if (Bitcoin.frame.find('#free_play_form_button').is(':visible')) {
 
-				// Faucet opened, remove loading div from splash page
-				$('#loading-block, .myloginprompt, #openfaucet .list-block').hide();
+				// Faucet opened
+				$('#loading-block, #openfaucet .list-block').hide();
 
 				// every .5 seconds, check if Captcha is checked
 				loopCaptchaChecked = setInterval(function() {
@@ -83,7 +93,7 @@ $(document).ready(function() {
 
 			} else {
 
-				$('#loading-block, .myloginprompt').hide();
+				$('#loading-block').hide();
 				$('#mainiframe').show();
 
 			}
