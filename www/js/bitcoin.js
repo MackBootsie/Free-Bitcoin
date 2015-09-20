@@ -36,6 +36,9 @@ var Bitcoin = {
 	info: {
 		balance: function() {
 			$('#topbalance').text(Bitcoin.frame.find('#balance2').text().replace(' BTC',''));
+		},
+		payout: function() {
+			return Bitcoin.frame.find('.payout_time_remaining').text().replace('Days',' days ').replace('Day',' day ').replace('Hours',' hours ').replace('Hour',' hour ').replace('Minutes',' minutes ').replace('Minute',' minute ').replace('Seconds',' seconds;').replace('Second',' second;').split(';')[0];
 		}
 	}
 };
@@ -53,6 +56,7 @@ $(document).ready(function() {
 	window.setInterval(function() {
 		Bitcoin.info.balance(); // keeps balance updated
 		Bitcoin.frame.find('.cc_banner-wrapper').remove(); // removes cookies banner
+		$('#payouttime').text(Bitcoin.info.payout());
 	}, 1000);
 
 	// When iframe changes location, iframe init needs to take place again
@@ -105,24 +109,16 @@ $(document).ready(function() {
 
 	// Button in info page used to check auto withdraw
 	$('#checkAutoWithdrawStatus').click(function(){
-		$('#checkAutoWithdrawStatus').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
-		window.setTimeout(function() {
-			if (Bitcoin.frame.find('span#edaw > span').is('.green')) {
-				$('#checkAutoWithdrawStatus')
-						.prop('class','button button-fill color-green')
-						.text('Enabled');
-				$('#outputAutoWithdrawStatus')
-						.removeAttr('style')
-						.text('Auto Withdraw is enabled. You should receive payment at around midday on Sunday (UTC). Your balance will be automatically reset to zero when this occurs.');
-			} else {
-				$('#checkAutoWithdrawStatus')
-						.prop('class','button button-fill color-red')
-						.text('Disabled');
-				$('#outputAutoWithdrawStatus')
-						.removeAttr('style')
-						.text('Auto Withdraw is disabled. You will need to log in to freebitco.in on your computer to withdraw your funds manually.');
-			}
-		}, 1000);
+		if (Bitcoin.frame.find('span#edaw > span').is('.green')) {
+			$('#outputAutoWithdrawStatus').removeAttr('style').text('Auto Withdraw is enabled. Your balance will be automatically reset to zero when this occurs.');
+		} else {
+			$('#outputAutoWithdrawStatus').removeAttr('style').text('Auto Withdraw is disabled. Tap below to enable Auto Withdraw:');
+			$('#enableAutoWithdraw').on('click', function(){
+				Bitcoin.frame.find('#auto_withdraw').click();
+				$(this).off('click').hide();
+				$('#outputAutoWithdrawStatus').text('Auto Withdraw is enabled. Your balance will be automatically reset to zero when this occurs.');
+			}).show().parent().removeAttr('style');
+		}
 	});
 
 });
