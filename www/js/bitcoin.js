@@ -35,7 +35,7 @@ var Bitcoin = {
 	},
 	info: {
 		balance: function() {
-			$('#topbalance').text(Bitcoin.frame.find('#balance2').text());
+			$('#topbalance').text(Bitcoin.frame.find('#balance2').text().replace(' BTC',''));
 		}
 	}
 };
