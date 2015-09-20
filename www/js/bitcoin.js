@@ -81,7 +81,9 @@ $(document).ready(function() {
 			} else if (Bitcoin.frame.find('#free_play_form_button').is(':visible')) {
 
 				// Faucet opened
-				$('#loading-block, #openfaucet .list-block').hide();
+				$('#loading-block, #openfaucet').hide();
+				Bitcoin.frame.find('#free_play_form_button').hide();
+				$('#mainiframe').css('height', '100vh').show();
 
 				// every .5 seconds, check if Captcha is checked
 				loopCaptchaChecked = setInterval(function() {
