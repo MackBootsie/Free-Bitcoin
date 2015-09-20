@@ -36,6 +36,9 @@ var Bitcoin = {
 	info: {
 		balance: function() {
 			$('#topbalance').text(Bitcoin.frame.find('#balance2').text().replace(' BTC',''));
+		},
+		payout: function() {
+			return Bitcoin.frame.find('.payout_time_remaining').text().replace('Days',' days ').replace('Day',' day ').replace('Hours',' hours ').replace('Hour',' hour ').replace('Minutes',' minutes ').replace('Minute',' minute ').replace('Seconds',' seconds;').replace('Second',' second;').split(';')[0];
 		}
 	}
 };
@@ -53,6 +56,7 @@ $(document).ready(function() {
 	window.setInterval(function() {
 		Bitcoin.info.balance(); // keeps balance updated
 		Bitcoin.frame.find('.cc_banner-wrapper').remove(); // removes cookies banner
+		$('#payouttime').text(Bitcoin.info.payout());
 	}, 1000);
 
 	// When iframe changes location, iframe init needs to take place again
