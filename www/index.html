@@ -59,13 +59,32 @@
 								<p style="text-align: center; font-size: 110%;">฿<span id="text-maxwinnings"></span></p>
 							</div>
 						</div>
-						<div class="content-block-title">Withdrawls</div>
-						<div class="content-block">
-							<div class="content-block-inner">
-								<p>Bitcoins are paid to your account once a week, if you have Auto Withdrawls enabled and have more than 0.00005460 BTC. You can check the status of Auto Withdrawls by tapping below:</p>
-								<p><a id="checkAutoWithdrawStatus" class="button button-fill">Check Status</a></p>
-								<p id="outputAutoWithdrawStatus" style="display: none;"></p>
-							</div>
+						<div class="content-block-title">Payouts</div>
+						<div class="list-block accordion-list">
+							<ul>
+								<li class="accordion-item">
+									<div class="accordion-item-expanded">
+										<div class="accordion-item-content">
+											<div class="content-block">
+												<p>Bitcoins are paid to your account once a week, if you have Auto Withdrawls enabled and have more than 0.0001 BTC. You can check the status of Auto Withdrawls by tapping below:</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="accordion-item">
+									<a href="#" class="item-content item-link" id="checkAutoWithdrawStatus">
+										<div class="item-inner">
+											<div class="item-title">Check Status</div>
+										</div>
+									</a>
+									<div class="accordion-item-content">
+										<div class="content-block">
+											<p id="outputAutoWithdrawStatus" style="display: none;"></p>
+											<p style="display: none;"><a href="#" class="button" id="enableAutoWithdraw">Enable Auto Withdraw</a></p>
+										</div>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>

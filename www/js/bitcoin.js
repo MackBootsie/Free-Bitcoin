@@ -105,24 +105,16 @@ $(document).ready(function() {
 
 	// Button in info page used to check auto withdraw
 	$('#checkAutoWithdrawStatus').click(function(){
-		$('#checkAutoWithdrawStatus').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
-		window.setTimeout(function() {
-			if (Bitcoin.frame.find('span#edaw > span').is('.green')) {
-				$('#checkAutoWithdrawStatus')
-						.prop('class','button button-fill color-green')
-						.text('Enabled');
-				$('#outputAutoWithdrawStatus')
-						.removeAttr('style')
-						.text('Auto Withdraw is enabled. You should receive payment at around midday on Sunday (UTC). Your balance will be automatically reset to zero when this occurs.');
-			} else {
-				$('#checkAutoWithdrawStatus')
-						.prop('class','button button-fill color-red')
-						.text('Disabled');
-				$('#outputAutoWithdrawStatus')
-						.removeAttr('style')
-						.text('Auto Withdraw is disabled. You will need to log in to freebitco.in on your computer to withdraw your funds manually.');
-			}
-		}, 1000);
+		if (Bitcoin.frame.find('span#edaw > span').is('.green')) {
+			$('#outputAutoWithdrawStatus').removeAttr('style').text('Auto Withdraw is enabled. Your balance will be automatically reset to zero when this occurs.');
+		} else {
+			$('#outputAutoWithdrawStatus').removeAttr('style').text('Auto Withdraw is disabled. Tap below to enable Auto Withdraw:');
+			$('#enableAutoWithdraw').on('click', function(){
+				Bitcoin.frame.find('#auto_withdraw').click();
+				$(this).off('click').hide();
+				$('#outputAutoWithdrawStatus').text('Auto Withdraw is enabled. Your balance will be automatically reset to zero when this occurs.');
+			}).show().parent().removeAttr('style');
+		}
 	});
 
 });
