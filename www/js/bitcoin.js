@@ -40,9 +40,10 @@ $(document).ready(function() {
 
 	Bitcoin.setup.setFrame();
 
-	// Keep balance updated
+	// Stuff to run constantly
 	window.setInterval(function() {
-		Bitcoin.info.balance();
+		Bitcoin.info.balance(); // keeps balance updated
+		Bitcoin.frame.find('.cc_banner-wrapper').remove(); // removes cookies banner
 	}, 1000);
 
 	// When iframe changes location, iframe init needs to take place again
@@ -162,7 +163,6 @@ Bitcoin.setup.framed = function() {
 	Bitcoin.frame.find('#free_play_form_button').parent().parent().css('margin-top','25px');
 	Bitcoin.frame.find('.free_play_claim_button').parent().parent().css('margin-top','70px');
 	Bitcoin.frame.find('button[data-reveal-id="myModal17"]').parent().hide();
-	Bitcoin.frame.find('.cc_banner-wrapper').remove(); //cookies banner
 	// iPad
 	Bitcoin.frame.find('.show-for-medium-up').remove();
 	Bitcoin.frame.find('.show-for-small').removeClass('show-for-small');
