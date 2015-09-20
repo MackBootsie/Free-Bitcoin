@@ -87,7 +87,7 @@ $(document).ready(function() {
 				loopCaptchaChecked = setInterval(function() {
 					if (Bitcoin.frame.find('iframe[title="recaptcha widget"]').contents().find('.recaptcha-checkbox').attr('aria-checked') == "true") {
 						clearInterval(loopCaptchaChecked);
-
+						Bitcoin.frame.find('#free_play_form_button').click();
 					}
 				}, 500);
 
