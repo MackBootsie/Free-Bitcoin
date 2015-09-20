@@ -7,7 +7,9 @@ var mainView = appBitcoin.addView('.view-main', {
 	dynamicNavbar: true
 });
 
-var frame; // Will be used to put contents of iframe in initsetup for other functions
+var frame, // Will be used to put contents of iframe in initsetup for other functions
+    loopCaptchaChecked, // setInterval to check Captcha checkbox
+    loopCaptchaChallenge; // setInterval to check Captcha challenge
 
 var Bitcoin = {
 	setup: {
@@ -51,14 +53,11 @@ $(document).ready(function() {
 		Bitcoin.setup.setFrame();
 		window.setTimeout(function () {
 
-			if (Bitcoin.frame.find('.free_play_claim_button').is(':visible') == true) {
-
-				// Make sure preloader is not being shown
-				$('#openfaucet-preloader').hide();
+			if (Bitcoin.frame.find('.free_play_claim_button').is(':visible')) {
 
 				// Faucet not opened, iframe is only showing Open Faucet button right now
+				$('#loading-block, .myloginprompt, #mainiframe, #openfaucet-preloader').hide();
 				$('#openfaucet').show();
-				$('#loading-block, .myloginprompt').hide();
 
 				// Open Faucet list item link
 				$('#openfaucet-button').on('click', function() {
@@ -69,9 +68,21 @@ $(document).ready(function() {
 
 				$('#text-maxwinnings').text(Bitcoin.frame.find('#free_play_payout_table > table tbody tr:last td:last').text().replace(' BTC',''));
 
+			} else if (Bitcoin.frame.find('#free_play_form_button').is(':visible')) {
+
+				// Faucet opened, remove loading div from splash page
+				$('#loading-block, .myloginprompt, #openfaucet .list-block').hide();
+
+				// every .5 seconds, check if Captcha is checked
+				loopCaptchaChecked = setInterval(function() {
+					if (Bitcoin.frame.find('iframe[title="recaptcha widget"]').contents().find('.recaptcha-checkbox').attr('aria-checked') == "true") {
+						clearInterval(loopCaptchaChecked);
+
+					}
+				}, 500);
+
 			} else {
 
-				// Faucet opened, remove loading div from splash page and show iframe
 				$('#loading-block, .myloginprompt').hide();
 				$('#mainiframe').show();
 
