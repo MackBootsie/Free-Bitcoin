@@ -77,7 +77,7 @@ $(document).ready(function() {
 
 				// Faucet not opened, iframe is only showing Open Faucet button right now
 				$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
-				$('#openfaucet').show();
+				$('#openfaucet, #openfaucet-button').show();
 
 				// Open Faucet list item link
 				$('#openfaucet-button').on('click', function() {
@@ -91,9 +91,10 @@ $(document).ready(function() {
 			} else if (Bitcoin.frame.find('#free_play_form_button').is(':visible')) {
 
 				// Faucet opened
-				$('#loading-block, #openfaucet').hide();
+				$('#loading-block').hide();
+				$('#openfaucet-preloader').hide();
 				Bitcoin.frame.find('#free_play_form_button').hide();
-				$('#mainiframe').css('height', '100vh').show();
+				$('#mainiframe').css('height', '600px').show();
 
 				// every .5 seconds, check if Captcha is checked
 				loopCaptchaChecked = setInterval(function() {
