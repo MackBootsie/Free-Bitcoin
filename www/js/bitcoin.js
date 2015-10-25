@@ -142,7 +142,6 @@ function onDeviceReady() {
 
 Bitcoin.setup.framed = function() {
 	// Formatting
-	Bitcoin.frame.find('.bold.red').parent().remove();
 	Bitcoin.frame.find('.adsbygoogle').attr("style", "display: none;");
 	Bitcoin.frame.find('#free_play_tab > center, #free_play_tab > br, #wait > p, #switch_to_solvemedia, .large-9 > div[align=center] > center, a[href="javascript:Recaptcha.showhelp()"], .top-bar, div[style="margin-top:25px;text-align:center;margin-bottom:15px;"] > span, p[style="width:80%;"]').remove();
 	Bitcoin.frame.find('#free_play_payout_table').hide();
