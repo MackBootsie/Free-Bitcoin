@@ -1,5 +1,7 @@
 var appBitcoin = new Framework7({
-	animateNavBackIcon: true // *Removes* back icon animation
+	animateNavBackIcon: true, // *Removes* back icon animation
+	precompileTemplates: true,
+	template7Pages: true
 });
 var $$ = Dom7;
 var mainView = appBitcoin.addView('.view-main', {
@@ -106,6 +108,9 @@ $(document).ready(function() {
 						Bitcoin.frame.find('#free_play_form_button').click();
 						$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
 						$('#rollingindicator').show();
+						setTimeout(function() {
+							mainView.router.load({template: 'rollpage'});
+						},2000);
 					}
 				}, 500);
 

@@ -8,21 +8,48 @@
 		</div>
 	</div>
 	<div class="page-content">
-		<div class="list-block inset">
-			<div class="content-block">
-				<div class="content-block-inner">
-					<p id="roll-random" style="text-align: center; font-size: 110%;"></p>
-				</div>
+		<style>
+			#roll-random, #roll-bitcoin {
+				text-align: center;
+				margin: 0;
+			}
+			#roll-random {
+				/*noinspection CssInvalidPropertyValue*/
+				font-size: -webkit-xxx-large;
+			}
+			.roll-bitcoin {
+				text-align: center;
+				background-color: #edffe0;
+			}
+			.roll-bitcoin:before, .roll-bitcoin:after {
+				background-color: lightgreen;
+			}
+			#roll-bitcoin {
+				font-size: 200%;
+			}
+			.roll-info {
+				text-align: center;
+				background-color: #fff3d0;
+			}
+			.roll-info:before, .roll-info:after {
+				background-color: orange;
+			}
+		</style>
+		<div class="content-block">
+			<div class="content-block-inner">
+				<p id="roll-random">{{number}}</p>
 			</div>
-			<div class="content-block">
-				<div class="content-block-inner">
-					<p id="roll-bitcoin" style="text-align: center; font-size: 110%;"></p>
-				</div>
+		</div>
+		<div class="content-block">
+			<div class="content-block-inner roll-bitcoin">
+				<p>You earned:</p>
+				<p id="roll-bitcoin">฿{{bitcoin}}</p>
+				<p>&amp; 2 lottery tickets!</p>
 			</div>
-			<div class="content-block">
-				<div class="content-block-inner">
-					<p id="roll-info"></p>
-				</div>
+		</div>
+		<div class="content-block">
+			<div class="content-block-inner roll-info">
+				<p id="roll-info"></p>
 			</div>
 		</div>
 	</div>
