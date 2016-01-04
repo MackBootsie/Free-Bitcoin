@@ -31,7 +31,7 @@ var Bitcoin = {
 					iAd.prepareInterstitial({
 						autoShow: true
 					})
-				},1500)}
+				},4000)}
 			);
 		}
 	},
