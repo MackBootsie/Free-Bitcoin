@@ -1,6 +1,7 @@
 body {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-user-select: none;
+	padding-top: 0 !important;
 }
 
 iframe {
@@ -16,4 +17,15 @@ iframe {
 
 #loading-block-inner {
 	margin-top: 50%;
+}
+
+.login-screen-title {
+	padding-top: 20px;
+}
+
+#logintabs .tabs form ul li:last-child {
+	margin-top: 10px;
+}
+#logintabs .tabs .tab {
+	margin-top: -20px;
 }
