@@ -31,7 +31,7 @@ var Bitcoin = {
 					iAd.prepareInterstitial({
 						autoShow: true
 					})
-				},1500)}
+				},4000)}
 			);
 		}
 	},
@@ -60,12 +60,21 @@ $(document).ready(function() {
 	// Stuff to run constantly
 	window.setInterval(function() {
 		Bitcoin.info.balance(); // keeps balance updated
-		Bitcoin.frame.find('.cc_banner-wrapper').remove(); // removes cookies banner
 		$('#payouttime').text(Bitcoin.info.payout());
 		$('#lotteryfirstprize').text('1st place: ' + Bitcoin.info.lotteryprize() + ' BTC');
 		Bitcoin.frame.find('iframe[title="recaptcha challenge"], iframe[title="recaptcha widget"]').contents().find('html').css({'-webkit-tap-highlight-color': 'rgba(0,0,0,0)', '-webkit-user-select': 'none'});
 		Bitcoin.frame.find('iframe[title="recaptcha challenge"]').contents().find('.rc-report-problem-text, .audio-button-holder, .image-button-holder, .help-button-holder').css('visibility', 'hidden');
 	}, 1000);
+	(function removeCookieBanner() {
+		var elBannerWrapper = Bitcoin.frame.find('.cc_banner-wrapper');
+		if (elBannerWrapper) {
+			elBannerWrapper.remove();
+		} else {
+			setTimeout(function() {
+				removeCookieBanner();
+			}, 1000);
+		}
+	})();
 
 	// When iframe changes location, iframe init needs to take place again
 	$('#mainiframe').load(function() {
@@ -86,14 +95,12 @@ $(document).ready(function() {
 				$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
 				$('#openfaucet').show();
 
-				$('#openfaucet-button').parent().parent().parent().show();
-
 				// Open Faucet list item link
 				$('#openfaucet-button').on('click', function() {
 					$('#openfaucet-button').off('click'); // disables subsequent clicks
 					$('#openfaucet-preloader').show(); // show preloader
 					Bitcoin.frame.find('.free_play_claim_button')[0].click(); // click on the button in the iframe
-				});
+				}).parent().parent().parent().show();
 
 				$('#text-maxwinnings').text(Bitcoin.frame.find('#free_play_payout_table > table tbody tr:last td:last').text().replace(' BTC',''));
 
