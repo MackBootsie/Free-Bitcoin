@@ -70,6 +70,11 @@ $(document).ready(function() {
 	// When iframe changes location, iframe init needs to take place again
 	$('#mainiframe').load(function() {
 		Bitcoin.setup.setFrame();
+		var ellogintabs = $('#logintabs');
+		if (ellogintabs.is(':visible')) {
+			ellogintabs.hide();
+			appBitcoin.hidePreloader();
+		}
 		setLoginStatus('Almost there…');
 		window.setTimeout(function () {
 
@@ -113,6 +118,72 @@ $(document).ready(function() {
 						},2000);
 					}
 				}, 500);
+
+			} else if (Bitcoin.frame.find('h5').eq(0).is(':visible')) { // visible if not logged in
+
+				$('#logintabs').show();
+				var elLoginForm = Bitcoin.frame.find('fieldset').eq(1);
+				var elSignupForm = Bitcoin.frame.find('fieldset').eq(0);
+
+				// login tab
+				$('#logintabsloginsubmit').on('click', function() {
+					appBitcoin.showPreloader('Authenticating');
+					// get form values
+					var localEmail = $('input[name=loginemail]')[0].value;
+					var localPass = $('input[name=loginpass]')[0].value;
+					// set form values into iframe form
+					elLoginForm.find('#login_form_btc_address')[0].value = localEmail;
+					elLoginForm.find('#login_form_password')[0].value = localPass;
+					elLoginForm.find('#login_button')[0].click(); // submit frame form
+					setTimeout(function() {
+						if (Bitcoin.frame.find('#login_error').css('display') === 'block') { // login error
+							appBitcoin.hidePreloader();
+							appBitcoin.alert(Bitcoin.frame.find('#login_error').text(), 'Login error');
+							Bitcoin.frame.find('#login_error').text('').css('display', 'none');
+						} else {
+							// login success, the iframe is already loading the page in the background
+							$('input[name=loginemail]')[0].value = '';
+							$('input[name=loginpass]')[0].value = '';
+							appBitcoin.hidePreloader();
+							appBitcoin.showPreloader('Thanks for registering! Loading…');
+						}
+					}, 2500);
+				});
+
+				// signup tab
+				$('#logintabssignupsubmit').on('click', function() {
+					appBitcoin.showPreloader('Authenticating');
+					// get form values
+					var localEmail = $('input[name=signupemail]')[0].value;
+					var localPass = $('input[name=signuppass]')[0].value;
+					var localBitcoin = $('input[name=signupbitcoin]')[0].value;
+					// set form values into iframe form
+					elSignupForm.find('#signup_form_email')[0].value = localEmail;
+					elSignupForm.find('#signup_form_password')[0].value = localPass;
+					elSignupForm.find('#signup_form_btc_address')[0].value = localBitcoin;
+					elSignupForm.find('#signup_button')[0].click(); // submit frame form
+					setTimeout(function() {
+						if (Bitcoin.frame.find('#signup_error').css('display') === 'block') { // signup error
+							appBitcoin.hidePreloader();
+							appBitcoin.alert(Bitcoin.frame.find('#signup_error').text(), 'Sign up error');
+							Bitcoin.frame.find('#login_error').text('').css('display', 'none');
+						} else {
+							// sign up success, the iframe is already loading the page in the background
+							$('input[name=signupemail]')[0].value = '';
+							$('input[name=signuppass]')[0].value = '';
+							$('input[name=signupbitcoin]')[0].value = '';
+							setLoginStatus('Thanks for registering! Loading…');
+						}
+					}, 2500);
+				});
+
+				$('#loading-block').hide();
+
+				// local styles
+				//var titles = Bitcoin.frame.find('h5');
+				//titles.eq(0).text('Create an account');
+				//titles.eq(1).text('Login to your account');
+				//titles.removeClass().removeAttr('style').css({'font-weight': 'initial', 'font-size': '20px'});
 
 			} else {
 
