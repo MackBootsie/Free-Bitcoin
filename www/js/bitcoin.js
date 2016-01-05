@@ -81,14 +81,12 @@ $(document).ready(function() {
 				$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
 				$('#openfaucet').show();
 
-				$('#openfaucet-button').parent().parent().parent().show();
-
 				// Open Faucet list item link
 				$('#openfaucet-button').on('click', function() {
 					$('#openfaucet-button').off('click'); // disables subsequent clicks
 					$('#openfaucet-preloader').show(); // show preloader
 					Bitcoin.frame.find('.free_play_claim_button')[0].click(); // click on the button in the iframe
-				});
+				}).parent().parent().parent().show();
 
 				$('#text-maxwinnings').text(Bitcoin.frame.find('#free_play_payout_table > table tbody tr:last td:last').text().replace(' BTC',''));
 
