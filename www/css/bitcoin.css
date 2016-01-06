@@ -17,6 +17,18 @@ iframe {
 #loading-block-inner {
 	margin-top: 50%;
 }
+
+.popupWelcome .title {
+	text-align: center;
+	font-size: 30px
+}
+.popupWelcome .skip {
+	display: block;
+	margin-top: 35vh;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
 #roll-random, #roll-bitcoin {
 	text-align: center;
 	margin: 0;
