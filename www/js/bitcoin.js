@@ -167,8 +167,6 @@ $(document).ready(function() {
 							// login success, the iframe is already loading the page in the background
 							$('input[name=loginemail]')[0].value = '';
 							$('input[name=loginpass]')[0].value = '';
-							appBitcoin.hidePreloader();
-							appBitcoin.showPreloader('Thanks for registering! Loading…');
 						}
 					}, 2500);
 				});
@@ -195,19 +193,12 @@ $(document).ready(function() {
 							$('input[name=signupemail]')[0].value = '';
 							$('input[name=signuppass]')[0].value = '';
 							$('input[name=signupbitcoin]')[0].value = '';
-							setLoginStatus('Thanks for registering! Loading…');
 						}
 					}, 2500);
 				});
 
 				$('#loading-block').hide();
-
-				// local styles
-				//var titles = Bitcoin.frame.find('h5');
-				//titles.eq(0).text('Create an account');
-				//titles.eq(1).text('Login to your account');
-				//titles.removeClass().removeAttr('style').css({'font-weight': 'initial', 'font-size': '20px'});
-
+				
 			} else {
 
 				$('#loading-block').hide();
