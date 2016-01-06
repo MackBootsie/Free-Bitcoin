@@ -44,6 +44,13 @@ var Bitcoin = {
 		},
 		lotteryprize: function() {
 			return Bitcoin.frame.find('.lottery_first_prize').text();
+		},
+		globalstats: function() {
+			return [
+				Bitcoin.frame.find('#total_signups_number').text(),
+				Bitcoin.frame.find('#total_plays_number').text(),
+				Bitcoin.frame.find('#total_btc_won_number_signup_page').text()
+			]
 		}
 	}
 };
