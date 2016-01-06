@@ -44,6 +44,13 @@ var Bitcoin = {
 		},
 		lotteryprize: function() {
 			return Bitcoin.frame.find('.lottery_first_prize').text();
+		},
+		globalstats: function() {
+			return [
+				Bitcoin.frame.find('#total_signups_number').text(),
+				Bitcoin.frame.find('#total_plays_number').text(),
+				Bitcoin.frame.find('#total_btc_won_number_signup_page').text()
+			]
 		}
 	}
 };
@@ -54,6 +61,15 @@ function setLoginStatus (status) {
 
 // Go
 $(document).ready(function() {
+
+	// Done welcome?
+	var bLaunched = localStorage.getItem('bLaunched');
+	if (!bLaunched) {
+		setTimeout(function() {
+			appBitcoin.popup('.popupWelcome');
+			initWelcome();
+		}, 1500);
+	}
 
 	Bitcoin.setup.setFrame();
 
@@ -146,6 +162,22 @@ $(document).ready(function() {
 	});
 
 });
+
+var initWelcomeDone = false;
+function initWelcome() {
+	if (!initWelcomeDone) {
+		appBitcoin.swiper('.popupWelcome .swiper-container', {
+			pagination:'.swiper-pagination'
+		});
+		var elStatistics = $('.item-after', '.popupWelcome');
+		setInterval(function() {
+			for (var iGS = 0; iGS < 3; iGS++) {
+				elStatistics.eq(iGS).text(Bitcoin.info.globalstats()[iGS]);
+			}
+		}, 1000);
+		initWelcomeDone = true;
+	}
+}
 
 document.addEventListener("deviceready", onDeviceReady, false);
 // iAd setup
