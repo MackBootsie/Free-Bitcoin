@@ -29,6 +29,17 @@ iframe {
 	text-align: center;
 }
 
+.login-screen-title {
+	padding-top: 20px;
+}
+
+#logintabs .tabs form ul li:last-child {
+	margin-top: 10px;
+}
+#logintabs .tabs .tab {
+	margin-top: -20px;
+}
+
 #roll-random, #roll-bitcoin {
 	text-align: center;
 	margin: 0;
