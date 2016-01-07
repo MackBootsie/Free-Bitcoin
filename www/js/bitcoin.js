@@ -38,6 +38,7 @@ var Bitcoin = {
 	info: {
 		balance: function() {
 			$('#topbalance').text(Bitcoin.frame.find('#balance2').text().replace(' BTC',''));
+			appBitcoin.sizeNavbars('.view-main');
 		},
 		payout: function() {
 			return Bitcoin.frame.find('.payout_time_remaining').text().replace('Days',' days ').replace('Day',' day ').replace('Hours',' hours ').replace('Hour',' hour ').replace('Minutes',' minutes ').replace('Minute',' minute ').replace('Seconds',' seconds;').replace('Second',' second;').split(';')[0];
