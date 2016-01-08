@@ -131,8 +131,14 @@ $(document).ready(function() {
 						$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
 						$('#rollingindicator').show();
 						setTimeout(function() {
-							mainView.router.load({template: 'rollpage'});
-						},2000);
+							mainView.router.load({
+								url: 'roll.html',
+								context: {
+									number: Bitcoin.frame.find('#free_play_digits').text(),
+									bitcoin: Bitcoin.frame.find('#winnings').text()
+								}
+							});
+						}, 3000);
 					}
 				}, 500);
 
