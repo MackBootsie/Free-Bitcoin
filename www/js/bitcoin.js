@@ -85,7 +85,9 @@ $(document).ready(function() {
 	}, 1000);
 
 	// When iframe changes location, iframe init needs to take place again
-	$('#mainiframe').load(function() {
+	$('#mainiframe').load(function() { frameLoad() });
+
+	function frameLoad() {
 		Bitcoin.setup.setFrame();
 		var ellogintabs = $('#logintabs');
 		if (ellogintabs.is(':visible')) {
@@ -205,7 +207,7 @@ $(document).ready(function() {
 			}
 
 		}, 1000);
-	});
+	}
 
 	// Button in info page used to check auto withdraw
 	$('#checkAutoWithdrawStatus').click(function(){
@@ -238,6 +240,23 @@ function initWelcome() {
 		initWelcomeDone = true;
 	}
 }
+
+var loopRollTimeRemaining;
+function rollTimeRemaining() {
+	$('#roll-info').text(Bitcoin.frame.find('#time_remaining').text().replace('Days',' days ').replace('Day',' day ').replace('Hours',' hours ').replace('Hour',' hour ').replace('Minutes',' minutes ').replace('Minute',' minute ').replace('Seconds',' seconds;').replace('Second',' second;').split(';')[0]);
+}
+appBitcoin.onPageBeforeInit('roll', function() {
+	loopRollTimeRemaining = setInterval(function() { rollTimeRemaining() }, 1000);
+});
+appBitcoin.onPageBeforeAnimation('roll', function() {
+	rollTimeRemaining();
+});
+appBitcoin.onPageAfterBack('roll', function() {
+	frameLoad();
+});
+appBitcoin.onPageBeforeRemove('roll', function() {
+	clearInterval(loopRollTimeRemaining);
+});
 
 document.addEventListener("deviceready", onDeviceReady, false);
 // iAd setup
