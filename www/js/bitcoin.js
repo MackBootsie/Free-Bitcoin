@@ -190,7 +190,13 @@ $(document).ready(function() {
 				});
 
 				$('#loading-block').hide();
-				
+
+			} else if (Bitcoin.frame.find('#time_remaining').is(':visible')) { // not open, wait
+
+				mainView.router.load({
+					url: 'roll.html'
+				});
+
 			} else {
 
 				$('#loading-block').hide();
