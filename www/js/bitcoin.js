@@ -138,6 +138,7 @@ $(document).ready(function() {
 
 			} else if (Bitcoin.frame.find('h5').eq(0).is(':visible')) { // visible if not logged in
 
+				$('#mainiframe').hide();
 				$('#logintabs').show();
 				var elLoginForm = Bitcoin.frame.find('fieldset').eq(1);
 				var elSignupForm = Bitcoin.frame.find('fieldset').eq(0);
