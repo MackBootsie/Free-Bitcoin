@@ -244,6 +244,9 @@ function initWelcome() {
 				elStatistics.eq(iGS).text(Bitcoin.info.globalstats()[iGS]);
 			}
 		}, 1000);
+		$('.popupWelcome').on('close', function() {
+			localStorage.setItem('bLaunched', 1);
+		});
 		initWelcomeDone = true;
 	}
 }
