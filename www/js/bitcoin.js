@@ -20,11 +20,11 @@ var Bitcoin = {
 			Bitcoin.frame = $(frame);
 		},
 		setFrame: function() {
-			setLoginStatus('Connecting…');
+			setLoadStatus('Connecting…');
 			Bitcoin.setup.getFrame();
-			setLoginStatus('Checking balance…');
+			setLoadStatus('Checking balance…');
 			Bitcoin.info.balance();
-			setLoginStatus('Consociating…');
+			setLoadStatus('Consociating…');
 			Bitcoin.setup.framed();
 			Bitcoin.frame.find('#free_play_form_button').click(function(){
 				setTimeout(function(){
@@ -56,7 +56,7 @@ var Bitcoin = {
 	}
 };
 
-function setLoginStatus (status) {
+function setLoadStatus (status) {
 	$('#loginstatus').text(status);
 }
 
@@ -94,10 +94,10 @@ $(document).ready(function() {
 			ellogintabs.hide();
 			appBitcoin.hidePreloader();
 		}
-		setLoginStatus('Almost there…');
+		setLoadStatus('Almost there…');
 		window.setTimeout(function () {
 
-			setLoginStatus('');
+			setLoadStatus('');
 
 			if (Bitcoin.frame.find('.free_play_claim_button').is(':visible')) {
 
@@ -262,7 +262,8 @@ appBitcoin.onPageBeforeAnimation('roll', function() {
 	rollTimeRemaining();
 });
 appBitcoin.onPageAfterBack('roll', function() {
-	frameLoad();
+	setLoadStatus('Reloading…');
+	$('#mainiframe')[0].contentWindow.location.reload();
 });
 appBitcoin.onPageBeforeRemove('roll', function() {
 	clearInterval(loopRollTimeRemaining);
