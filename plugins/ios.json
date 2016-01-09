@@ -51,11 +51,12 @@
             "PACKAGE_NAME": "com.georgegarside.freebitcoin"
         },
         "cordova-plugin-iad": {
-            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
-        },
-        "cordova-plugin-extension": {
-            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+            "PACKAGE_NAME": "com.georgegarside.freebitcoin"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.georgegarside.freebitcoin"
+        }
+    }
 }

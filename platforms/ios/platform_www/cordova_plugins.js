@@ -30,8 +30,8 @@ module.exports.metadata =
 {
     "org.apache.cordova.device": "0.2.13",
     "org.apache.cordova.statusbar": "0.1.9",
-    "cordova-plugin-iad": "2.0.5",
-    "cordova-plugin-extension": "1.1.4"
+    "cordova-plugin-extension": "1.2.3",
+    "cordova-plugin-iad": "2.0.5"
 }
 // BOTTOM OF METADATA
 });
