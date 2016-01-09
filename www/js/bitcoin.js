@@ -261,7 +261,12 @@ appBitcoin.onPageBeforeInit('roll', function() {
 appBitcoin.onPageBeforeAnimation('roll', function() {
 	rollTimeRemaining();
 });
+appBitcoin.onPageAfterAnimation('roll', function() {
+	$('#rollingindicator').hide();
+});
 appBitcoin.onPageAfterBack('roll', function() {
+	$('#loading-block').show();
+	$('#openfaucet, #rollingindicator, #mainiframe').hide();
 	setLoadStatus('Reloading…');
 	$('#mainiframe')[0].contentWindow.location.reload();
 });
