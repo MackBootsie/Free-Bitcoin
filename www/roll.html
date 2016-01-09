@@ -1,0 +1,35 @@
+<div class="page" data-page="roll">
+	<div class="navbar">
+		<div class="navbar-inner">
+			{{#if nonav}}{{else}}
+			<div class="left sliding">
+				<a href="#" class="back link"><i class="icon icon-back"></i><span>Free Bitcoin</span></a>
+			</div>
+			{{/if}}
+			<div class="center sliding">Roll</div>
+		</div>
+	</div>
+	<div class="page-content">
+		{{#if number}}
+		<div class="content-block">
+			<div class="content-block-inner">
+				<p id="roll-random">{{number}}</p>
+			</div>
+		</div>
+		{{/if}}
+		{{#if bitcoin}}
+		<div class="content-block">
+			<div class="content-block-inner roll-bitcoin">
+				<p>You earned:</p>
+				<p id="roll-bitcoin">฿{{bitcoin}}</p>
+				<p>&amp; 2 lottery tickets!</p>
+			</div>
+		</div>
+		{{/if}}
+		<div class="content-block">
+			<div class="content-block-inner roll-info">
+				<p id="roll-info"></p>
+			</div>
+		</div>
+	</div>
+</div>
