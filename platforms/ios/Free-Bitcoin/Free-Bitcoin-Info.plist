@@ -30,5 +30,12 @@
 	<true/>
 	<key>NSMainNibFile~ipad</key>
 	<string></string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

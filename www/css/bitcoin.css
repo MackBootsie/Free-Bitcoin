@@ -17,3 +17,51 @@ iframe {
 #loading-block-inner {
 	margin-top: 50%;
 }
+
+.popupWelcome .title {
+	text-align: center;
+	font-size: 30px
+}
+.popupWelcome .skip {
+	display: block;
+	margin-top: 35vh;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.login-screen-title {
+	padding-top: 20px;
+}
+
+#logintabs .tabs form ul li:last-child {
+	margin-top: 10px;
+}
+#logintabs .tabs .tab {
+	margin-top: -20px;
+}
+
+#roll-random, #roll-bitcoin {
+	text-align: center;
+	margin: 0;
+}
+#roll-random {
+	/*noinspection CssInvalidPropertyValue*/
+	font-size: -webkit-xxx-large;
+}
+.roll-bitcoin {
+	text-align: center;
+	background-color: #edffe0;
+}
+.roll-bitcoin:before, .roll-bitcoin:after {
+	background-color: lightgreen;
+}
+#roll-bitcoin {
+	font-size: 200%;
+}
+.roll-info {
+	text-align: center;
+	background-color: #fff3d0;
+}
+.roll-info:before, .roll-info:after {
+	background-color: orange;
+}
