@@ -26,7 +26,7 @@
     <feature name="iAd">
         <param name="ios-package" value="iAdPlugin" />
     </feature>
-    <name>Free-Bitcoin</name>
+    <name>FreeBitcoin</name>
     <description>
         A free bitcoin faucet app by George Garside.
     </description>
