@@ -11,20 +11,20 @@
             "id": "org.apache.cordova.statusbar"
         }
     },
-    "cordova-plugin-extension": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-extension"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-iad": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-iad"
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-extension": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-extension"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }

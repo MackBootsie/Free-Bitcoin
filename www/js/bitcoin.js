@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 				// every .5 seconds, check if Captcha is checked
 				loopCaptchaChecked = setInterval(function() {
-					if (Bitcoin.frame.find('iframe[title="recaptcha widget"]').contents().find('.recaptcha-checkbox').attr('aria-checked') == "true") {
+					if (Bitcoin.frame.find('#free_play_captchas_recaptcha_v2 .g-recaptcha iframe').contents().find('.recaptcha-checkbox').attr('aria-checked') == "true") {
 						clearInterval(loopCaptchaChecked);
 						Bitcoin.frame.find('#free_play_form_button').click();
 						$('#loading-block, #mainiframe, #openfaucet-preloader').hide();
